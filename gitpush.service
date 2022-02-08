@@ -1,0 +1,14 @@
+[Unit]
+Description=Git push service
+After=network.target
+
+[Service]
+ExecStart=bash /home/pi/klipper_config/expressPush.sh
+WorkingDirectory=/home/pi/klipper_config
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
