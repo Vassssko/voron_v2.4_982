@@ -61,10 +61,10 @@ path: /home/pi/kiauh
 origin: https://github.com/th33xitus/kiauh.git
 install_script: kiauh.sh
 
-[update_manager client Stable_z_home]
-type: git_repo
-path: ~/Klipper-Stable-Z-Home
-origin: https://github.com/matthewlloyd/Klipper-Stable-Z-Home
+# [update_manager client Stable_z_home]
+# type: git_repo
+# path: ~/Klipper-Stable-Z-Home
+# origin: https://github.com/matthewlloyd/Klipper-Stable-Z-Home
 
 #[update_manager client KlipperScreen]
 #type: git_repo
