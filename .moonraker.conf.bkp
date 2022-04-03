@@ -1,0 +1,59 @@
+[server]
+host: 0.0.0.0
+port: 7125
+enable_debug_logging: False
+config_path: ~/klipper_config
+log_path: /home/pi/klipper_logs
+temperature_store_size: 600
+gcode_store_size: 1000
+
+[authorization]
+cors_domains:
+  *.local
+  *.lan
+  *://app.fluidd.xyz
+
+trusted_clients:
+    10.0.0.0/8
+    127.0.0.0/8
+    169.254.0.0/16
+    172.16.0.0/12
+    192.168.0.0/16
+    FE80::/10
+    ::1/128
+
+# enables history
+[history]
+
+# enables support for slicer uploads via partial Octoprint API impl
+[octoprint_compat]
+
+# enables update manager
+[update_manager]
+
+# enables mainsail updates
+[update_manager client mainsail]
+type: web
+repo: mainsail-crew/mainsail
+path: ~/mainsail
+
+[update_manager client z_calibration]
+type: git_repo
+path: ~/klipper_z_calibration
+origin: https://github.com/protoloft/klipper_z_calibration.git
+install_script: install.sh
+
+[update_manager client KIAUH]
+type: git_repo
+primary_branch: master
+path: /home/pi/kiauh
+origin: https://github.com/th33xitus/kiauh.git
+install_script: kiauh.sh
+
+[update_manager client moonraker-telegram-bot]
+type: git_repo
+path: ~/moonraker-telegram-bot
+origin: https://github.com/nlef/moonraker-telegram-bot.git
+env: ~/moonraker-telegram-bot-env/bin/python
+requirements: scripts/requirements.txt
+install_script: scripts/install.sh
