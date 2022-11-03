@@ -8,7 +8,7 @@
 ### Please set the paths accordingly.                             ###
 #####################################################################
 ### Path to your config folder where you want to store your input shaper files
-IS_FOLDER=~/klipper_config/input_shaper
+IS_FOLDER=home/pi/klipper_config/input_shaper
 ### number of results you want to keep
 STORE_RESULTS=5
 
@@ -41,7 +41,7 @@ function generate_folder {
 function plot_shaper_graph {
   local axis date file isf generator
   axis=(x y)
-  generator="${HOME}/klipper/scripts/calibrate_shaper.py"
+  generator="/home/pi/klipper/scripts/calibrate_shaper.py"
   isf="${IS_FOLDER//\~/${HOME}}"
   for s in "${axis[@]}"; do
   #shellcheck disable=SC2012
@@ -57,7 +57,7 @@ function plot_belt_graph {
   local belts csv date date_ext file isf generator src
   belts=(a b)
   date_ext="$(date +%Y%m%d_%H%M%S)"
-  generator="${HOME}/klipper/scripts/graph_accelerometer.py"
+  generator="/home/pi/klipper/scripts/graph_accelerometer.py"
   isf="${IS_FOLDER//\~/${HOME}}"
   #shellcheck disable=SC2012
   for i in "${belts[@]}"; do
